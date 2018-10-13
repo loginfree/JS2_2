@@ -1,0 +1,40 @@
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Ajax</title>
+	<script>
+		window.onload = function () {
+			var $button = document.getElementById('button');
+			var $response = document.getElementById('response');
+
+			$button.addEventListener('click', function (event) {
+
+				var xhr = new XMLHttpRequest();
+
+				xhr.open('GET', 'http://127.0.0.1:8080/text.txt');
+
+				xhr.send();
+
+				xhr.onreadystatechange = function () {
+					if (xhr.readyState === XMLHttpRequest.DONE) {
+						if (xhr.status === 200) {  // {result : “success”}
+							var $elem = document.getElementById('button');
+							$elem.setAttribute('style', 'width: 200'); // меняется ширина на 200px
+							$response.innerText = xhr.responseText;
+						}
+						else { // {result: “error”}
+							var $elem = document.getElementById('button');
+							$elem.setAttribute('style', 'width: 300'); // меняется ширина на 300px
+							$response.innerText = xhr.responseText;
+						}
+					}
+				};
+			});
+		}
+	</script>
+</head>
+<body>
+<button id="button">test response</button>
+<div id="response"></div>
+</body>
+</html>

@@ -1,0 +1,34 @@
+{
+  "gallery": [
+    {
+      "id": "1",
+      "name": "STELS Navigator 500",
+      "url": "https://ultrasport.ru/upload/cache/Products/Product11309/b411b72dbc-1.jpg"
+    },
+    {
+      "id": "2",
+      "name": "Specialized Status 1",
+      "url": "https://veloprestige.ru/upload/iblock/05b/05bbf390bb5ccc8bd9563aec563aab4c.jpg"
+    },
+    {
+      "id": "3",
+      "name": "VISP VS9.0",
+      "url": "https://brandbike.ru/wp-content/uploads/2017/03/Gorniy-velosiped-VISP-VS9.0-BlackGrey-3.jpg"
+    },
+    {
+      "id": "4",
+      "name": "Top Gear 4REST ВН24135",
+      "url": "https://toyburg.ru/wa-data/public/shop/products/54/54/25454/images/29496/29496.970.jpeg"
+    },
+    {
+      "id": "5",
+      "name": "ARDIS ELITE 7.3 BIKE МТВ 28",
+      "url": "https://ardis-bike.com.ua/content/images/26/ardis-elite-2-bike-mtv-28-87172324086228.jpg"
+    },
+    {
+      "id": "6",
+      "name": "INSPIRED FOURPLAY PRO",
+      "url": "http://veloimport.ru/components/com_virtuemart/shop_image/product/12-5289.jpg"
+    }
+  ]
+}

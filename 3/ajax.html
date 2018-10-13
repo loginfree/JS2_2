@@ -1,0 +1,45 @@
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Ajax</title>
+	<script>
+		window.onload = function () {
+			var page = 1;
+			var $button = document.getElementById('button');
+			var $response = document.getElementById('response');
+
+			$button.addEventListener('click', function (event) {
+
+				var xhr = new XMLHttpRequest();
+
+				xhr.open('GET', 'http://localhost:3000/gallery?_limit=1&_page=' + page);
+
+				xhr.send();
+
+				xhr.onreadystatechange = function () {
+					if (xhr.readyState === XMLHttpRequest.DONE) {
+						if (xhr.status === 200) {
+							page++;
+							var pops = JSON.parse(xhr.responseText);
+							pops.forEach(function (gallery) {
+
+								var $img = document.createElement('img');
+								$img.setAttribute('src', gallery.url);
+								$img.setAttribute('width', '200px');
+								$img.setAttribute('height', '120px');
+								$img.setAttribute('title',gallery.name);
+								$response.appendChild($img);
+
+							})
+						}
+					}
+				};
+			});
+		}
+	</script>
+</head>
+<body>
+<button id="button">bike</button>
+<div id="response"></div>
+</body>
+</html>

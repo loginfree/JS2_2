@@ -1,0 +1,37 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Ajax</title>
+    <script>
+			window.onload = function () {
+				var $button = document.getElementById('send');
+				var $response = document.getElementById('response');
+
+				$button.addEventListener('click', function (event) {
+
+					var xhr = new XMLHttpRequest();
+
+					xhr.open('GET', 'http://localhost:3000/menuItems');
+
+					xhr.send();
+
+					xhr.onreadystatechange = function () {
+						if (xhr.readyState === XMLHttpRequest.DONE) {
+							if (xhr.status === 200) {
+								var memuItems = JSON.parse(xhr.responseText);
+								var $a = document.createElement('a');
+
+								$a.innerHTML = memuItems.item1 + '</br>' + memuItems.item2 + '</br>' + memuItems.item3;
+								$response.appendChild($a);
+							}
+						}
+					};
+				});
+			}
+    </script>
+</head>
+<body>
+    <button id="send">Send Menu</button>
+    <ul id="response"></ul>
+</body>
+</html>
